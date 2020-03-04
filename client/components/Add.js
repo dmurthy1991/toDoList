@@ -34,13 +34,15 @@ closeModal() {
         priority: 'Low',
         messageFromServer: ''
       });
+      console.log(this.state);
     }
 componentDidMount() {
       this.setState({
-        month: this.props.selectedPriority
+        priority: this.props.selectedPriority
       });
     }
 handleSelectChange(e) {
+  console.log('checl', e.target.name)
         if (e.target.name == 'priority') {
           this.setState({
             priority: e.target.value
@@ -80,10 +82,10 @@ render() {
           <Modal
             isOpen={this.state.modalIsOpen}
             onRequestClose={this.closeModal}
-            contentLabel="Add Expense"
+            contentLabel="Add Item"
        className="Modal">
 <Link to={{pathname: '/', search: '' }} style={{ textDecoration: 'none' }}>
-       <Button bsStyle="danger" bsSize="mini" onClick={this.closeModal}><span className="closebtn glyphicon glyphicon-remove"></span></Button>
+       <Button className = "clsBtn" bsStyle="danger" bsSize="mini" onClick={this.closeModal}><span className="closebtn glyphicon glyphicon-remove">X</span></Button>
       </Link><br/>
 <fieldset>
        <label for="item">Item:</label><input type="text" id="item" name="item" value={this.state.item} onChange={this.handleTextChange}></input>

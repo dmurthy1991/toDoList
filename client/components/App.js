@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Add from './Add.js';
+import Delete from './Delete.js'
 import '../css/App.css';
 
 export default class App extends React.Component {
@@ -34,7 +35,7 @@ getData(ev, item){
           <tbody>
             {
               this.state.data.map(function(exp){
-                return  <tr><td className='counterCell'></td><td className='desc-col'>{exp.item}</td><td className='button-col'>{exp.priority}</td></tr>
+                return  <tr><td className='counterCell'></td><td className='desc-col'>{exp.item}</td><td className='button-col'>{exp.priority}</td><td className='button-col'><Delete id={exp._id} item={exp} /></td></tr>
               })
             }
             </tbody>

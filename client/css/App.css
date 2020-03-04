@@ -101,3 +101,6 @@ margin:0px auto;
 .closebtn{
  float:right;
 }
+.clsBtn {
+  background-color: red;
+}
